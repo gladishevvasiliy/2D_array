@@ -15,21 +15,22 @@
 using namespace std;
 
 void displayArray(int a[][3], int n);
+int sumArray(int arr[][3], int N);
 
 int main()
 {
 
 	int const N = 3;
 	int arr[N][N] = { { 1,2,3 },
-	{ 4,5,6 },
-	{ 7,8,9 } };
+					{ 4,5,6 },
+					{ 7,8,9 } };
 	printf_s("elements of array: ");
 	/**/
 	displayArray(arr, N);
-
+	//cout << "sum = " << sumArray(arr, N) << endl;
 
 	//cумму эл-тов в тех строках, которые не содержат отрицательных эл-тов
-	int s = 0;
+	/*int s = 0;
 	int s1;
 	for (int i = 0; i < N; i++) {
 		s1 = 0;
@@ -39,8 +40,8 @@ int main()
 		}
 		s += s1;
 
-	}
-	cout << "sum of the elemetns from rows that don't include negative numbers = " << s << endl;
+	}*/
+	cout << "sum of the elemetns from rows that don't include negative numbers = " << sumArray(arr, N) << endl;
 
 	int n = 3;
 	int m = (n * 2) - 1;
@@ -79,4 +80,18 @@ void displayArray(int a[][3], int n) {
 		}
 	}
 	cout << endl;
+}
+int sumArray(int arr[][3], int N) {
+	int s = 0;
+	int s1;
+	for (int i = 0; i < N; i++) {
+		s1 = 0;
+		for (int j = 0; j < N; j++) {
+			if (arr[i][j] > 0) s1 = s1 + arr[i][j];
+			else { s1 = 0; break; };
+		}
+		s += s1;
+
+	}
+	return s;
 }
