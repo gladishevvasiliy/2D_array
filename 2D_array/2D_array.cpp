@@ -14,8 +14,12 @@
 
 using namespace std;
 
-void displayArray(int a[][3], int n);
 int sumArray(int arr[][3], int N);
+int minSumArr(int arrSum[], int N);
+void displayArray1D(int a[], int n);
+void displayArray2D(int a[][3], int n);
+void sumDiangle(int arr[][3], int arrSum[], int N, int M);
+
 
 int main()
 {
@@ -25,9 +29,13 @@ int main()
 					{ 4,5,6 },
 					{ 7,8,9 } };
 	printf_s("elements of array: ");
-	displayArray(arr, N);
+	displayArray2D(arr, N);
 	cout << "sum of the elemetns from rows that don't include negative numbers = " << sumArray(arr, N) << endl;
-
+	int arrSum[(N * 2) - 1] = { 0 };
+	sumDiangle(arr, arrSum, N, (N * 2) - 1);
+	cout << "sumArr = ";
+	displayArray1D(arrSum, (N * 2) - 1);
+	
 	//cout << "sum = " << sumArray(arr, N) << endl;
 	//cумму эл-тов в тех строках, которые не содержат отрицательных эл-тов
 	/*int s = 0;
@@ -41,37 +49,28 @@ int main()
 		s += s1;
 
 	}*/
-	
-
 	//int n = 3;
 	//int m = (n * 2) - 1;
 	//float *arrSum = new float[m];
-	int arrSum[(N * 2) - 1];
-
-	for (int i = 0;i < (N * 2) - 1; i++) arrSum[i] = 0;
-
-	for (int i = 0; i < N; i++) {
+	/*for (int i = 0; i < N; i++) {
 		for (int j = 0; j < N; j++) {
 			arrSum[i + j] = arrSum[i + j] + arr[i][j];
 		}
-	}
+	}*/
+	//for (int i = 0; i < (N * 2) - 1; i++)
+	//	cout << arrSum[i] << " ";
+	//cout << endl;
+	//int minSumArr = arrSum[0];
+	//for (int i = 1; i < (N * 2) - 1; i++)
+	//	if (arrSum[i] < minSumArr) minSumArr = arrSum[i];
 
-	cout << "sumArr = ";
-	for (int i = 0; i < (N * 2) - 1; i++)
-		cout << arrSum[i] << " ";
-	cout << endl;
-
-	float minSumArr = arrSum[0];
-	for (int i = 1; i < (N * 2) - 1; i++)
-		if (arrSum[i] < minSumArr) minSumArr = arrSum[i];
-
-	cout << "minSumArr = " << minSumArr << endl;
+	cout << "minSumArr = " << minSumArr(arrSum, N) << endl;
 
 	system("pause");
 	return 0;
 }
 
-void displayArray(int a[][3], int n) {
+void displayArray2D(int a[][3], int n) {
 	for (int i = 0; i < n; i++) {
 		for (int j = 0; j < n; j++) {
 			cout << a[i][j] << " ";
@@ -79,6 +78,13 @@ void displayArray(int a[][3], int n) {
 	}
 	cout << endl;
 }
+
+void displayArray1D(int a[], int n) {
+	for (int i = 0; i < n; i++)
+		cout << a[i] << " ";
+	cout << endl;
+}
+
 int sumArray(int arr[][3], int N) {
 	int s = 0;
 	int s1;
@@ -92,4 +98,17 @@ int sumArray(int arr[][3], int N) {
 
 	}
 	return s;
+}
+void sumDiangle(int arr[][3], int arrSum[], int N, int M) {
+	for (int i = 0; i < N; i++) {
+		for (int j = 0; j < N; j++) {
+			arrSum[i + j] = arrSum[i + j] + arr[i][j];
+		}
+	}
+}
+int minSumArr(int arrSum[], int N) {
+	int minSum = arrSum[0];
+	for (int i = 1; i < (N * 2) - 1; i++)
+		if (arrSum[i] < minSum) minSum = arrSum[i];
+	return minSum;
 }
