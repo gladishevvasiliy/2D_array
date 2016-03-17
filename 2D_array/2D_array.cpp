@@ -1,7 +1,6 @@
 /// 2d-array.cpp: определяет точку входа для консольного приложения.
 //cумму эл-тов в тех строках, которые не содержат отрицательных эл-тов
 //макс среди сумм эл-тов диагоналей, паралельной главной
-//lllllllllllllllllllllllloooooooooooooooooooooooooooooooooollllllllllllllllll
 
 #include "stdafx.h"
 #include <cstdlib>
