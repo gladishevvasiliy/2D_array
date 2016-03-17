@@ -21,17 +21,12 @@ int main()
 
 	int const N = 3;
 	int arr[N][N] = { { 1,2,3 },
-					{ 4,5,6 },
-					{ 7,8,9 } };
+	{ 4,5,6 },
+	{ 7,8,9 } };
 	printf_s("elements of array: ");
 	/**/
 	displayArray(arr, N);
-	/*for (int i = 0; i < N; i++) {
-	for (int j = 0; j < N; j++) {
-			cout << arr[i][j] << " ";
-		}
-	}
-	cout << endl;*/
+
 
 	//cумму эл-тов в тех строках, которые не содержат отрицательных эл-тов
 	int s = 0;
@@ -67,7 +62,7 @@ int main()
 		cout << arrSum[i] << " ";
 	cout << endl;
 
-	int minSumArr = arrSum[0];aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+	float minSumArr = arrSum[0];
 	for (int i = 1; i < m; i++)
 		if (arrSum[i] < minSumArr) minSumArr = arrSum[i];
 
