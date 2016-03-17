@@ -10,14 +10,7 @@
 #include <cfloat>
 #include <iostream>
 #include <conio.h>
-#include "stdafx.h"
-#include <cstdlib>
-#include <cstdio>
-#include <cmath>
-#include <clocale>
-#include <cfloat>
-#include <iostream>
-#include <conio.h>
+
 
 using namespace std;
 
