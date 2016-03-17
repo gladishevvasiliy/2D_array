@@ -23,7 +23,7 @@ void sumDiangle(int arr[][3], int arrSum[], int N, int M);
 
 int main()
 {
-	int const N = 3;
+	int const N = 3; 
 	int arr[N][N] = { { 2,-2,3 },
 					{ -4,4,6 },
 					{ 7,-23,9 } };
