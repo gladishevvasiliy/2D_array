@@ -71,7 +71,7 @@ int main()
 		cout << arrSum[i] << " ";
 	cout << endl;
 
-	int minSumArr = arrSum[0];
+	int minSumArr = arrSum[0];aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 	for (int i = 1; i < m; i++)
 		if (arrSum[i] < minSumArr) minSumArr = arrSum[i];
 
